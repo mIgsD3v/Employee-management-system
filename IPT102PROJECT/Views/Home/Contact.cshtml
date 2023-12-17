@@ -1,0 +1,90 @@
+﻿
+@model IEnumerable<IPT102PROJECT.Models.Contact>
+
+@{
+    ViewBag.Title = "Contact";
+}
+<br />
+<br />
+<br />
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<center><h2>Employee Contact</h2></center>
+
+<p>
+    <a class="btn btn-sucess btn-success" @Html.ActionLink("Create New", "Create4")
+</p>
+<br />
+<div>
+
+    <table class="table table-success table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Cellphonenumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Socialnetwork)
+            </th>
+
+
+            <th>Action</th>
+           
+        </tr>
+        
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Firstname)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lastname)
+                </td>
+               
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cellphonenumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Socialnetwork)
+                </td>
+
+                
+                <td>
+
+                    <a class="btn btn-warning btn-warning" ( @Html.ActionLink("Edit", "Edit4", new { id = item.EmployeeID })
+                
+                    <a class="btn btn-primary btn-danger" ( @Html.ActionLink("Delete", "Delete4", new { id = item.EmployeeID })
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

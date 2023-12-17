@@ -1,0 +1,69 @@
+﻿@model IEnumerable<IPT102PROJECT.Models.Salary>
+@{
+    ViewBag.Title = "About";
+}
+
+<br />
+<br />
+<br />
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<center><h2>Employee Salary</h2></center>
+
+<p>
+    <a class="btn btn-sucess btn-success" @Html.ActionLink("Create New", "Create2")
+</p>
+<br />
+<div>
+
+    <table class="table table-success table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+
+            <th>View details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td>
+
+
+                    <a class="btn btn-primary btn-primary" ( @Html.ActionLink("Details", "Details4", new { id = item.Name })
+
+
+
+                </td>
+                <td>
+
+                    <a class="btn btn-warning btn-warning" ( @Html.ActionLink("Edit", "Edit2", new { id = item.EmployeeID })
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-danger" ( @Html.ActionLink("Delete", "Delete2", new { id = item.EmployeeID })
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

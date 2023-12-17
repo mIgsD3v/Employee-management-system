@@ -1,0 +1,70 @@
+﻿@model IPT102PROJECT.Models.Payslip
+
+@{
+    ViewBag.Title = "Delete3";
+}
+
+<br />
+<br />
+<br />
+
+<br />
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Month)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Month)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Basic)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Basic)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tax)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tax)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Total)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Total)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                <a class="btn btn-primary btn-primary" @Html.ActionLink("Back to List", "Details4")
+            </div>
+        }
+    </div>
+>

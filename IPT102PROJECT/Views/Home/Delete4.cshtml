@@ -1,0 +1,71 @@
+﻿
+@model IPT102PROJECT.Models.Contact
+
+@{
+    ViewBag.Title = "Delete4";
+}
+
+<br />
+<br />
+<br />
+
+<br />
+
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+       
+        <dl class="dl-horizontal" >
+            <dt>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Firstname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Lastname)
+            </dd>
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cellphonenumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cellphonenumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Socialnetwork)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Socialnetwork)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a class="btn btn-primary btn-primary" @Html.ActionLink("Back to List", "Contact")
+    </div>
+        }
+    </div>

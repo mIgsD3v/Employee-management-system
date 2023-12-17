@@ -1,0 +1,71 @@
+﻿@model IEnumerable<IPT102PROJECT.Models.Payslip>
+
+@{
+    ViewBag.Title = "Details4";
+}
+
+<br />
+<br />
+<br />
+
+<br />
+<br />
+<br />
+
+
+
+<p>
+    <a class="btn btn-success btn-success" style="align-content:flex-end" @Html.ActionLink("Compute Salary", "Create3")
+</p>
+<br />
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Month)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Basic)
+            </th>
+            <th>
+                Tax 15%
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Month)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Basic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tax)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-primary" ( @Html.ActionLink("Edit", "Edit3", new { id = item.EmployeeID })
+           <a class="btn btn-primary btn-danger" (  @Html.ActionLink("Delete", "Delete3", new { id = item.EmployeeID })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<div>  <a class="btn btn-primary btn-primary" @Html.ActionLink("Back to List", "About")</div>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title | Calye pogi Website</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.mins.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container" style="color:aliceblue">
+            <div class="navbar-header" style="color:aliceblue">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="nav navbar-nav">
+
+                    <li>@Html.ActionLink("Employee Record", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Employee Salary", "About", "Home")</li>
+                    <li>@Html.ActionLink("Employee Contact", "Contact", "Home")</li>
+
+
+
+                    <div style="padding-left:900px; padding-top: 17px;">
+
+                        @if (Session["EmployeeID"] != null)
+                        {
+                            <h4>@Session["Name"].ToString()</h4>
+                        }
+                    </div>
+
+                </ul>
+
+            </div>
+            <a class="btn btn-primary btn-primary" @Html.ActionLink("Logout", "Loginn")
+
+
+        </div>
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>
